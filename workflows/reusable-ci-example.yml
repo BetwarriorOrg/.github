@@ -1,0 +1,20 @@
+# .github/workflows/reusable-ci.yml
+name: Reusable CI Workflow
+
+on:
+  workflow_call:  # Allows this workflow to be called from other repos
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Tests
+        run: echo "Running tests..."
+
+
+# For run on another actions
+#call-reusable-workflow:
+    # uses: your-org/.github/.github/workflows/reusable-ci.yml@main
